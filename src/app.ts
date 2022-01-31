@@ -6,7 +6,14 @@ import startup from "./startup";
 const app = express();
 const PORT = config.get("PORT");
 
-app.listen(PORT, () => {
-  logger.info(`Server running on port: ${PORT}`);
-  startup(app);
-});
+const main = async (): Promise<void> => {
+  const wasStartupSuccessful = await startup(app);
+
+  if (wasStartupSuccessful)
+    app.listen(PORT, () => {
+      logger.info(`Server running on port: ${PORT}`);
+    });
+  else logger.error("Can't app listen without db connection");
+};
+
+main();
