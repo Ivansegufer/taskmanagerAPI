@@ -13,7 +13,8 @@
     "express": "^4.17.2",
     "mongoose": "^6.1.8",
     "pino": "^7.6.5",
-    "pino-pretty": "^7.5.1"
+    "pino-pretty": "^7.5.1",
+    "zod": "^3.11.6"
   },
   "devDependencies": {
     "@types/config": "^0.0.41",
