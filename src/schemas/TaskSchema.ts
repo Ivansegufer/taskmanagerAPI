@@ -7,10 +7,12 @@ const TaskSchema = new Schema<TaskDocument>(
       type: String,
       required: true,
       unique: true,
+      trim: true,
     },
     description: {
       type: String,
       required: true,
+      trim: true,
     },
     completed: {
       type: Boolean,

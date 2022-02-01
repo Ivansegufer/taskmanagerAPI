@@ -32,7 +32,7 @@ export const createTaskHandler = async (
     if (e.message?.includes("duplicate key"))
       wrapUnsuccessfulResponse(
         res,
-        `Duplicate key from name: [${req.body.name}]`
+        `Duplicate key from name: [${req.body.name.trim()}]`
       );
     else wrapUnsuccessfulResponse(res, e.message);
   }

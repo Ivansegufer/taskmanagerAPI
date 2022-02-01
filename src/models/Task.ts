@@ -4,7 +4,7 @@ import TaskSchema from "../schemas/TaskSchema";
 export interface TaskInput {
   name: string;
   description: string;
-  completed: boolean;
+  completed?: boolean;
 }
 
 export interface TaskDocument extends TaskInput, Document {
