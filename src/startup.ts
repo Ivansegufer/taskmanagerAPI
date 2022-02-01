@@ -3,11 +3,13 @@ import { config } from "dotenv";
 import connectDB from "./db/connect";
 import tasksRouter from "./routes/tasks.routes";
 import logger from "./utils/logger";
+import requestLogger from "./middlewares/requestLogger";
 
 config();
 const MONGO_URI = process.env.MONGO_URI;
 
 const startup = async (app: Express): Promise<boolean> => {
+  app.use(requestLogger);
   app.use(json());
   app.use("/api/v1/tasks", tasksRouter);
 
