@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   getAllTasks,
   getTask,
-  createTask,
+  createTaskHandler,
   updateTask,
   deleteTask,
 } from "../controllers/tasks";
@@ -14,7 +14,7 @@ const router = Router();
 router
   .route("/")
   .get(getAllTasks)
-  .post(validateResource(createTaskSchema), createTask);
+  .post(validateResource(createTaskSchema), createTaskHandler);
 router.route("/:id").get(getTask).patch(updateTask).delete(deleteTask);
 
 export default router;
