@@ -1,20 +1,23 @@
 import { Schema } from "mongoose";
 import { TaskDocument } from "../models/Task";
 
-const TaskSchema = new Schema<TaskDocument>({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
+const TaskSchema = new Schema<TaskDocument>(
+  {
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    completed: {
+      type: Boolean,
+      required: true,
+    },
   },
-  description: {
-    type: String,
-    required: true,
-  },
-  completed: {
-    type: Boolean,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 export default TaskSchema;
