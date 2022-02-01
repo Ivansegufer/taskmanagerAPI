@@ -8,7 +8,9 @@ export const createTaskSchema = object({
     description: string({
       required_error: "Descriptioin is required",
     }),
-    completed: boolean().default(false),
+    completed: boolean({
+      required_error: "Completed flag is required",
+    }),
   }),
 });
 
