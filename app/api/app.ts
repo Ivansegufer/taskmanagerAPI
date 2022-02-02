@@ -1,7 +1,7 @@
 import express from "express";
 import config from "config";
-import logger from "./utils/logger";
-import startup from "./startup";
+import logger from "./src/utils/logger";
+import startup from "./src/startup";
 
 const app = express();
 const PORT = config.get("PORT");
