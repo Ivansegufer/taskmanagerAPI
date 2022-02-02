@@ -6,7 +6,7 @@ import {
   updateTask,
   deleteTask,
 } from "../controllers/tasks";
-import validateResource from "../middlewares/validateResource";
+import { validateResource } from "../middlewares";
 import { createTaskSchema } from "../validations/task.schema";
 
 const router = Router();

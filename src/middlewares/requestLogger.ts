@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import logger from "../utils/logger";
 
-const requestLogger = (
+export const requestLogger = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -12,5 +12,3 @@ const requestLogger = (
     `hostname: ${req.hostname} endpoint: ${req.path} method: ${req.method}`
   );
 };
-
-export default requestLogger;

@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import connectDB from "./db/connect";
 import tasksRouter from "./routes/tasks.routes";
 import logger from "./utils/logger";
-import requestLogger from "./middlewares/requestLogger";
+import { requestLogger } from "./middlewares";
 
 config();
 const MONGO_URI = process.env.MONGO_URI;
